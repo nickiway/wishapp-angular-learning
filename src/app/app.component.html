@@ -1,17 +1,5 @@
 <div class="container">
-  <div *ngIf="wishes.length === 0"></div>
-  <ng-container *ngIf="wishes.length"></ng-container>
-
-  <ng-template #noItems>There is not items</ng-template>
-
-  <ng-template #showItems>
-    <ul class="wish-list">
-      <li *ngFor="let wish of wishes">
-        <div class="form-check">
-          <input class="checkbox" type="checkbox" />
-          <span> {{ wish.title }}</span>
-        </div>
-      </li>
-    </ul>
-  </ng-template>
+  <app-wishlist-form (addWish)="wishes.push($event)"></app-wishlist-form>
+  <app-wish-filter [(filter)]="filter"></app-wish-filter>
+  <app-wishlist [wishes]="wishes.filter(filter)"></app-wishlist>
 </div>

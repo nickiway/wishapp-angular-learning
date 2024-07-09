@@ -1,0 +1,12 @@
+<ul class="wish-list mt-3">
+  @for (wish of wishes; track wish.wishId) {
+
+  <app-wishlist-item
+    [(fullfilled)]="wish.completed"
+    [wishText]="wish.title"
+  ></app-wishlist-item>
+
+  } @empty {
+  <div>There is no items :C</div>
+  }
+</ul>

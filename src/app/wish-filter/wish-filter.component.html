@@ -1,0 +1,12 @@
+<div class="pt-5">
+  <select
+    name="filter"
+    class="form-select w-25"
+    [(ngModel)]="filterValue"
+    (ngModelChange)="updateFilter($event)"
+  >
+    <option value="0">All</option>
+    <option value="1">Completed</option>
+    <option value="2">Not completed</option>
+  </select>
+</div>
